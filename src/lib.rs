@@ -205,6 +205,8 @@ pub use known_key::{Error as KnownKeyError, KnownKey};
 
 pub use crate::tape::{Node, StaticNode, Tape};
 
+mod jsonpath;
+
 /// Creates a tape from the input for later consumption
 pub fn to_tape<'input>(s: &'input mut [u8]) -> Result<Vec<Node<'input>>> {
     let de = stry!(Deserializer::from_slice(s));
